@@ -1,10 +1,8 @@
 module.exports = {
-    timeout: 200000,  // define a 20 seconds timeout for all tests
-    spec: ['src/**/*.test.ts'],  // updated to look for TypeScript spec files
+    timeout: 200000,
+    spec: 'src/**/*.test.ts',
+    require: 'ts-node/register',
     reporter: 'spec',
     recursive: true,
-    require: ['ts-node/register'],  // require ts-node/register to compile TypeScript files
-    extension: ['ts'],  // file extensions to look for
-    parallel: true,  // enable parallel execution
-    jobs: 2  // number of parallel jobs
+    exit: true
 };
