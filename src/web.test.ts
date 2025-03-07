@@ -1,6 +1,6 @@
 import { remote } from "webdriverio";
 
-describe.only("Google Homepage", function () {
+describe("Google Homepage", function () {
   let driver: WebdriverIO.Browser;
 
   // Increase timeout for this suite since we're dealing with real browser interactions
