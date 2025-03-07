@@ -15,7 +15,7 @@ const capabilities = {
   'appium:noReset': true,
 };
 
-describe.only('Healthcheck iOS Appium connection', function () {
+describe('Healthcheck iOS Appium connection', function () {
   let app: App;
 
   before(async () => {
