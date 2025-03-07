@@ -1,4 +1,5 @@
 import { App } from './app';
+import { closeIOSSimulators } from './utils/closeSimulators';
 
 const iOSVersion = '17.4';
 
@@ -15,16 +16,21 @@ const capabilities = {
   'appium:noReset': true,
 };
 
+// Set Jest timeout for all tests in this file to 60 seconds
+jest.setTimeout(60000);
+
 describe('Healthcheck iOS Appium connection', function () {
   let app: App;
 
-  before(async () => {
+  beforeAll(async () => {
     app = new App();
     await app.init(capabilities);
   });
 
-  after(async () => {
+  afterAll(async () => {
     await app.quit();
+    // Close iOS simulators after tests complete
+    await closeIOSSimulators();
   });
 
   it('checks iOS version number on Settings App', async () => {

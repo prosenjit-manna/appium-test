@@ -3,7 +3,7 @@
       "target": "es2019",
       "module": "commonjs",
       "lib": ["es2019", "dom"],
-      "types": ["node", "webdriverio/async", "mocha", "chai"],
+      "types": ["node", "webdriverio/async", "jest", "chai"],
       "strict": true,
       "noImplicitAny": true,
       "esModuleInterop": true,

@@ -4,24 +4,28 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "node --experimental-vm-modules node_modules/.bin/jest",
+    "test:web": "node --experimental-vm-modules node_modules/.bin/jest src/web.test.ts",
+    "test:ios": "node --experimental-vm-modules node_modules/.bin/jest src/healthcheckiOS.test.ts",
+    "test:android": "node --experimental-vm-modules node_modules/.bin/jest src/healthcheckAndroid.test.ts",
+    "start:android-emulator": "emulator -avd Pixel_3_API_34",
+    "android:test-with-emulator": "yarn start:android-emulator & sleep 20 && yarn test:android"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "chai": "^5.2.0",
-    "mocha": "^11.1.0",
     "webdriverio": "^9.11.0"
   },
   "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
   "devDependencies": {
     "@types/chai": "^5.2.0",
-    "@types/mocha": "^10.0.10",
+    "@types/jest": "^29.0.0",
     "@types/node": "^22.13.9",
     "@types/webdriverio": "^5.0.0",
     "chromedriver": "^134.0.0",
-    "ts-node": "^10.9.2",
+    "ts-jest": "^29.0.0",
     "typescript": "^5.8.2"
   }
 }

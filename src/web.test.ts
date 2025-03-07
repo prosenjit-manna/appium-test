@@ -1,12 +1,12 @@
 import { remote } from "webdriverio";
 
+// Set Jest timeout for this file (instead of using this.timeout)
+jest.setTimeout(30000);
+
 describe("Google Homepage", function () {
   let driver: WebdriverIO.Browser;
 
-  // Increase timeout for this suite since we're dealing with real browser interactions
-  this.timeout(30000);
-
-  before(async function () {
+  beforeAll(async function () {
     driver = await remote({
       capabilities: {
         browserName: "chrome",
@@ -27,7 +27,7 @@ describe("Google Homepage", function () {
     await driver.pause(10000);
   });
 
-  after(async function () {
+  afterAll(async function () {
     if (driver) {
       await driver.deleteSession();
     }
