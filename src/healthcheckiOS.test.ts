@@ -8,11 +8,14 @@ const capabilities = {
   'appium:deviceName': 'iPhone 15 Pro Max',
   'appium:automationName': 'XCUITest',
   'appium:app': 'com.apple.Preferences',
+  // 'appium:app': process.cwd() + '/app/neststartertemplateapp.app',
   'appium:locale': 'US',
   'appium:language': 'en',
+  'appium:udid': 'auto',
+  'appium:noReset': true,
 };
 
-describe('Healthcheck iOS Appium connection', function () {
+describe.only('Healthcheck iOS Appium connection', function () {
   let app: App;
 
   before(async () => {
