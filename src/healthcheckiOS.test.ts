@@ -1,9 +1,10 @@
 import { App } from './app';
 import { closeIOSSimulators } from './utils/closeSimulators';
+import { Capabilities } from '@wdio/types';
 
 const iOSVersion = '17.4';
 
-const capabilities = {
+const capabilities: Capabilities.WebdriverIOConfig['capabilities'] = {
   platformName: 'iOS',
   'appium:platformVersion': iOSVersion,
   'appium:deviceName': 'iPhone 15 Pro Max',
