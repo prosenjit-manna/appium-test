@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/.bin/jest",
+    "test": "NODE_OPTIONS=\"$NODE_OPTIONS --experimental-vm-modules\" dotenv -e .env jest",
     "test:web": "node --experimental-vm-modules node_modules/.bin/jest src/web.test.ts",
     "test:ios": "node --experimental-vm-modules node_modules/.bin/jest src/healthcheckiOS.test.ts",
     "test:android": "node --experimental-vm-modules node_modules/.bin/jest src/healthcheckAndroid.test.ts",
@@ -23,6 +23,7 @@
     "@types/node": "^22.13.9",
     "@types/webdriverio": "^5.0.0",
     "@wdio/types": "^9.10.1",
+    "dotenv-cli": "^8.0.0",
     "jest": "^29.7.0",
     "ts-jest": "^29.0.0",
     "typescript": "^5.8.2"
